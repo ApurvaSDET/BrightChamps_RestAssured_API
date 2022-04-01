@@ -100,13 +100,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <!--suiteXmlFiles>
+                    <suiteXmlFiles>
                         <suiteXmlFile>TestNG.xml</suiteXmlFile>
-                    </suiteXmlFiles-->
-                    <includes>
-                        <include>GET_Methods</include>
-                        <include>POST_Methods</include>
-                    </includes>
+                    </suiteXmlFiles>
+                    <!--includes>
+                        <include>*.*</include>
+                    </includes-->
                 </configuration>
             </plugin>
         </plugins>
