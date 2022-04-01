@@ -13,8 +13,8 @@
         </groups>
 
         <classes>
-            <class name="Tests.GET_Methods"/>
-            <class name="Tests.POST_Methods"/>
+            <class name="Tests.GET_Methods_Test"/>
+            <class name="Tests.POST_Methods_Test"/>
         </classes>
     </test>
 
