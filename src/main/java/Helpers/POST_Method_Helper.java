@@ -279,10 +279,13 @@ public class POST_Method_Helper extends ConfigManager {
     }
 
 
-    public Response VerifyValidOTP() throws InstantiationException, IllegalAccessException {
+    public Response VerifyValidOTP() throws InstantiationException, IllegalAccessException, InterruptedException {
 
         //Sending OTP to email using SendOTP API
         SendEmailOTP();
+
+        //Waiting for a sec after sending an OTP
+        Thread.sleep(1500);
 
         //Creating Object for Setter Class
         VerifyOTP verifyOTP = new VerifyOTP();

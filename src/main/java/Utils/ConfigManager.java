@@ -64,7 +64,7 @@ public class ConfigManager {
 
         try {
             Connection dbConnection = DriverManager
-                    .getConnection(System.getenv("DB_CONNECTIONURL"),System.getenv("DB_USERNAME"),System.getenv("DB_PASSWORD"));
+                    .getConnection(System.getenv("DB_CONNECTIONURL")+"/?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false",System.getenv("DB_USERNAME"),System.getenv("DB_PASSWORD"));
             Statement stmt = dbConnection.createStatement();
 
             if(stmt.execute(Query))

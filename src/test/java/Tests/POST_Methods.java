@@ -82,7 +82,7 @@ public class POST_Methods extends ConfigManager {
     }
 
     @Test(groups = {"Regression","DB_Related"})
-    public void POST_VerifyValidOTP() throws InstantiationException, IllegalAccessException {
+    public void POST_VerifyValidOTP() throws InstantiationException, IllegalAccessException, InterruptedException {
 
         Assert.assertNotNull(POST_Method_Helper.VerifyValidOTP().jsonPath().getString("token"));
 
