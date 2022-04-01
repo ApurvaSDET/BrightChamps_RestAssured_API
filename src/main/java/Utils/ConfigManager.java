@@ -71,7 +71,7 @@ public class ConfigManager {
         }
         try {
             Connection dbConnection = DriverManager
-                    .getConnection(System.getenv("DB_CONNECTIONURL")+"?"+"user="+System.getenv("DB_USERNAME")+"&password="+System.getenv("DB_PASSWORD"));
+                    .getConnection(System.getenv("DB_CONNECTIONURL")+"/?enabledTLSProtocols=TLSv1.2",System.getenv("DB_USERNAME"),System.getenv("DB_PASSWORD"));
 
             Statement stmt = dbConnection.createStatement();
 
