@@ -63,15 +63,17 @@ public class ConfigManager {
 
         Object Data = null;
 
-        try {
+      /*  try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
         } catch (ClassNotFoundException e) {
 
             System.exit(0);
         }
+
+       */
         try {
             Connection dbConnection = DriverManager
-                    .getConnection(System.getenv("DB_CONNECTIONURL")+"/?enabledTLSProtocols=TLSv1.2",System.getenv("DB_USERNAME"),System.getenv("DB_PASSWORD"));
+                    .getConnection(System.getenv("DB_CONNECTIONURL")+"/?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false",System.getenv("DB_USERNAME"),System.getenv("DB_PASSWORD"));
 
             Statement stmt = dbConnection.createStatement();
 
