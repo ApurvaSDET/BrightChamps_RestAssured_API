@@ -103,9 +103,9 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <!--includes>
+                    <includes>
                         <include>*.*</include>
-                    </includes-->
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>

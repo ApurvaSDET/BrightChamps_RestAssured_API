@@ -17,7 +17,7 @@ public class GET_Methods {
 
     }
 
-    @Test(groups = {"Regression"})
+    @Test(groups = {"Regression","SmokeTest"})
     public void GET_ProfileDetails(){
 
         Assert.assertNotNull(GET_Method_Helper.getProfile());
