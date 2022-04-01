@@ -10,7 +10,7 @@ pipelines:
             caches:
               - maven
             script:
-              - mvn -B clean test --file pom.xml
+              - mvn -B clean test -Dgroups=@SmokeTest --file pom.xml
 
 
             after-script:
