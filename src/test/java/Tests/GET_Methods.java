@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class GET_MethodsTest {
+public class GET_Methods {
 
     private GET_Method_Helper GET_Method_Helper;
 
