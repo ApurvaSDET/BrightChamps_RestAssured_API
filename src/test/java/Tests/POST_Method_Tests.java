@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class POST_Methods_Test extends ConfigManager {
+public class POST_Method_Tests extends ConfigManager {
 
     private POST_Method_Helper POST_Method_Helper;
 
