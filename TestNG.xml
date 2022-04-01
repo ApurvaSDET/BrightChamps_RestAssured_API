@@ -14,7 +14,7 @@
 
         <classes>
             <class name="Tests.GET_Methods"/>
-            <class name="Tests.POST_Methods"/>
+            <!--class name="Tests.POST_Methods"/-->
         </classes>
     </test>
 
