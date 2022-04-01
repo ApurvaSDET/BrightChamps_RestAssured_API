@@ -100,9 +100,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <suiteXmlFiles>
+                    <!--suiteXmlFiles>
                         <suiteXmlFile>TestNG.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    </suiteXmlFiles-->
+                    <groups>SmokeTest</groups>
                     <!--includes>
                         <include>*.*</include>
                     </includes-->
