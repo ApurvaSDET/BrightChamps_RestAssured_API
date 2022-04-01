@@ -1,0 +1,1 @@
+{"uuid":"355e6a94-301f-4a98-8217-80835f46a5e5","name":"Tests.GETStudentProfile","children":["11b97449-bd92-4498-af5d-27f378c758d2"],"befores":[{"name":"init","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1647861636831,"stop":1647861637387}],"afters":[],"start":1647861636770,"stop":1647861641007}
