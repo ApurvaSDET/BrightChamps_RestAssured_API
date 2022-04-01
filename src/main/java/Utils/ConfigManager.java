@@ -71,7 +71,7 @@ public class ConfigManager {
         }
         try {
             Connection dbConnection = DriverManager
-                    .getConnection(System.getenv("DB_CONNECTIONURL")+"/?autoReconnect=true&failOverReadOnly=false&maxReconnects=10",System.getenv("DB_USERNAME"),System.getenv("DB_PASSWORD"));
+                    .getConnection(System.getenv("DB_CONNECTIONURL")+"/?enabledTLSProtocols=TLSv1.2",System.getenv("DB_USERNAME"),System.getenv("DB_PASSWORD"));
 
             Statement stmt = dbConnection.createStatement();
 
