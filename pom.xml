@@ -104,7 +104,7 @@
                             <forkCount>1</forkCount>
                             <reuseForks>true</reuseForks>
                             <includes>
-                                <include>TestNG.xml</include>
+                                <include>*.*</include>
                             </includes>
                         </configuration>
                     </execution>

@@ -19,7 +19,6 @@ public class ConfigManager {
     public static String BASE_URL_Teachers = null;
 
 
-
     public ConfigManager(){
 
         BASE_URL = valueForTheGivenKey("BaseURL");
