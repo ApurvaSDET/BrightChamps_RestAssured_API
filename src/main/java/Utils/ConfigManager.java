@@ -58,23 +58,13 @@ public class ConfigManager {
         return StringUtils.substringBefore(dtPlusOne.toString(), "T");
     }
 
-    public Object _getResult(String Query, String DateType, String Column) throws InstantiationException,
-            IllegalAccessException {
+    public Object _getResult(String Query, String DateType, String Column){
 
         Object Data = null;
 
-      /*  try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-        } catch (ClassNotFoundException e) {
-
-            System.exit(0);
-        }
-
-       */
         try {
             Connection dbConnection = DriverManager
                     .getConnection(System.getenv("DB_CONNECTIONURL"),System.getenv("DB_USERNAME"),System.getenv("DB_PASSWORD"));
-
             Statement stmt = dbConnection.createStatement();
 
             if(stmt.execute(Query))
