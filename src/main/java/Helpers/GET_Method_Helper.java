@@ -286,7 +286,7 @@ public class GET_Method_Helper extends ConfigManager {
                 .given().auth()
                 .oauth2(_generateToken())
                 .contentType(ContentType.JSON)
-                .param("studentId",ConfigManager.valueForTheGivenKey("studentId"))
+                .param("studentId",51537)
                 .get(EndPoints.GET_DemoClassDetails)
                 .andReturn();
 
