@@ -21,7 +21,7 @@ public class ConfigManager {
 
     public ConfigManager(){
 
-        BASE_URL = valueForTheGivenKey("BaseURL");
+        BASE_URL = System.getenv("Base_URL");
         BASE_URL_Teachers = valueForTheGivenKey("BaseURL_Teachers");
     }
 
