@@ -260,7 +260,7 @@ public class GET_Method_Helper extends ConfigManager {
                 .given().auth()
                 .oauth2(_generateToken())
                 .contentType(ContentType.JSON)
-                .param("studentId","51537")
+                .param("studentId","1057") //Prod user #user_id = 1057
                 .get(EndPoints.GET_UpgradePlan)
                 .andReturn();
 
