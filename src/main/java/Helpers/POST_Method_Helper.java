@@ -271,7 +271,7 @@ public class POST_Method_Helper extends ConfigManager {
                 .andReturn();
 
 
-        Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_UNAUTHORIZED);
+        Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_BAD_REQUEST);
         Assert.assertTrue(response.getTimeIn(TimeUnit.MILLISECONDS) < Integer.parseInt(valueForTheGivenKey("APIResponseTime")));
 
         return response;
