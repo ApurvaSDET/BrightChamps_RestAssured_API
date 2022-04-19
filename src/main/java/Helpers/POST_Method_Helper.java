@@ -423,7 +423,7 @@ public class POST_Method_Helper extends ConfigManager {
         ArrayList<Integer> arraylist = new ArrayList<>();
 
         //Adding random int value at 0th index
-        arraylist.add(new Random().nextInt(10));
+        arraylist.add(new Random().nextInt(10)+1);
 
         //Creating Object for Setter Class
         AddBeans addbeans = new AddBeans();
