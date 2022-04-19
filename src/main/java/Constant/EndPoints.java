@@ -29,6 +29,7 @@ public class EndPoints {
     public static final String GET_GlobalHouseSlots= "/global-house-slots";
     public static final String GET_TeacherAvailabilityWeek= "/teacher-availability-week";
     public static final String GET_TeacherAvailability= "/teacher-availability";
+    public static final String GET_Beans = "/getBeans/"+ConfigManager.valueForTheGivenKey("studentId");
     public static final String POST_SendOTP = "/send-otp";
     public static final String POST_ForgotPassword = "/forgot-password";
     public static final String POST_ResetPassword = "/reset-password";
@@ -38,6 +39,7 @@ public class EndPoints {
     public static final String POST_MasterLogin = "/master-login";
     public static final String POST_GlobalHouseRequest = "/global-house";
     public static final String POST_UploadProfilePic = "/upload-file";
+    public static final String POST_AddBeans = "/addBeans";
 
 
 

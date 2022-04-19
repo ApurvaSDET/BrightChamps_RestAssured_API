@@ -14,6 +14,7 @@ import org.testng.Assert;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class POST_Method_Helper extends ConfigManager {
@@ -415,5 +416,39 @@ public class POST_Method_Helper extends ConfigManager {
         return response;
 
     }
+
+    public Response AddBeans(){
+
+        //Creating an ArrayList Object
+        ArrayList<Integer> arraylist = new ArrayList<>();
+
+        //Adding random int value at 0th index
+        arraylist.add(new Random().nextInt(10));
+
+        //Creating Object for Setter Class
+        AddBeans addbeans = new AddBeans();
+
+        //Providing Body
+        addbeans.setStudentId(Integer.parseInt(valueForTheGivenKey("studentId")));
+        addbeans.setActionsId(arraylist);
+
+        Response response = RestAssured
+                .given().auth()
+                .oauth2(_generateToken())
+                .contentType(ContentType.JSON)
+                .when()
+                .body(addbeans)
+                .post(EndPoints.POST_AddBeans)
+                .andReturn();
+
+
+        Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK);
+        Assert.assertTrue(response.getTimeIn(TimeUnit.MILLISECONDS) < Integer.parseInt(valueForTheGivenKey("APIResponseTime")));
+
+        return response;
+
+    }
+
+
 
 }

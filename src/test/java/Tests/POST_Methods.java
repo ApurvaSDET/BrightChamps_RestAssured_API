@@ -109,4 +109,11 @@ public class POST_Methods extends ConfigManager {
 
     }
 
+    @Test(groups = {"Regression"})
+    public void POST_AddBeans() {
+
+        Assert.assertEquals(POST_Method_Helper.AddBeans().jsonPath().getString("message"),"success");
+
+    }
+
 }

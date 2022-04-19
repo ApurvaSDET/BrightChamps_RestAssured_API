@@ -178,4 +178,11 @@ public class GET_Methods {
 
     }
 
+    @Test(groups = {"Regression"})
+    public void GET_Beans() {
+
+        Assert.assertNotNull(GET_Method_Helper.getBeans());
+
+    }
+
 }

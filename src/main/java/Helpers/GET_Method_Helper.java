@@ -549,4 +549,27 @@ public class GET_Method_Helper extends ConfigManager {
 
     }
 
+    public Response getBeans()
+    {
+
+        Response response = RestAssured
+                .given().auth()
+                .oauth2(_generateToken())
+                .contentType(ContentType.JSON)
+                .get(EndPoints.GET_Beans)
+                .andReturn();
+
+        Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK);
+        Assert.assertTrue(response.getTimeIn(TimeUnit.MILLISECONDS) <Integer.parseInt(valueForTheGivenKey("APIResponseTime")));
+
+        Assert.assertNotNull(response.jsonPath().getString("data.total_score"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions[0].action"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions[0].point"));
+        Assert.assertEquals(response.jsonPath().getString("message"),"success");
+
+        return response;
+
+    }
+
+
 }
