@@ -286,7 +286,7 @@ public class POST_Method_Helper extends ConfigManager {
         SendEmailOTP();
 
         //Waiting for a sec after sending an OTP
-        Thread.sleep(1500);
+        Thread.sleep(3000);
 
         //Creating Object for Setter Class
         VerifyOTP verifyOTP = new VerifyOTP();
