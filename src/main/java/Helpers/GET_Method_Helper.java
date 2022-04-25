@@ -563,8 +563,14 @@ public class GET_Method_Helper extends ConfigManager {
         Assert.assertTrue(response.getTimeIn(TimeUnit.MILLISECONDS) <Integer.parseInt(valueForTheGivenKey("APIResponseTime")));
 
         Assert.assertNotNull(response.jsonPath().getString("data.total_score"));
-        Assert.assertNotNull(response.jsonPath().getString("data.actions[0].action"));
-        Assert.assertNotNull(response.jsonPath().getString("data.actions[0].point"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions.Projects[0].action"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions.Projects[0].point"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions.Assessments[0].action"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions.Assessments[0].point"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions.Assignments[0].action"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions.Assignments[0].point"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions.Hackathon[0].action"));
+        Assert.assertNotNull(response.jsonPath().getString("data.actions.Hackathon[0].point"));
         Assert.assertEquals(response.jsonPath().getString("message"),"success");
 
         return response;
