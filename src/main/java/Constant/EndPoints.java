@@ -13,7 +13,7 @@ public class EndPoints {
     public static final String GET_Quiz = "/quiz";
     public static final String GET_FreemiumProfile = "/freemium-profile";
     public static final String GET_ReferralLink = "/referral-link";
-    public static final String GET_LeaderBoard = "leader-board";
+    public static final String GET_LeaderBoard = "/leader-board";
     public static final String POST_EmailSignIn = "/email-signin";
     public static final String GET_CancelReasonList = "/reason";
     public static final String GET_UpgradePlan = "/upgrade-plan";

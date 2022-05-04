@@ -207,9 +207,9 @@ public class GET_Method_Helper extends ConfigManager {
 
         Response response = RestAssured
                 .given().auth()
-                .oauth2(_generateToken())
+                .oauth2(valueForTheGivenKey("Token_P"))
                 .contentType(ContentType.JSON)
-                .param("userId",ConfigManager.valueForTheGivenKey("studentId"))
+                .param("userId","51537")
                 .param("type","referral")
                 .get(EndPoints.GET_LeaderBoard)
                 .andReturn();
