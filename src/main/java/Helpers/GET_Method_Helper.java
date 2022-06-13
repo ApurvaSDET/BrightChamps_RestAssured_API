@@ -109,10 +109,10 @@ public class GET_Method_Helper extends ConfigManager {
 
         Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK);
         Assert.assertTrue(response.getTimeIn(TimeUnit.MILLISECONDS) <Integer.parseInt(valueForTheGivenKey("APIResponseTime")));
-        Assert.assertNotNull(response.jsonPath().getString("data.feed[1].promo_link"));
-        Assert.assertNotNull(response.jsonPath().getString("data.feed[1].know_more_link"));
-        Assert.assertNotNull(response.jsonPath().getString("data.feed[1].referralClass.Count"));
-        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].detail"));
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].promo_link"));
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].know_more_link"));
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].referralClass.Count"));
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].offers[0]"));
 
         StudentFeed studentfeed = response.as(type);
 

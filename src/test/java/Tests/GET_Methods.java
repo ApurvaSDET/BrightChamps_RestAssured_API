@@ -33,7 +33,8 @@ public class GET_Methods {
     public void GET_Certificates() {
 
         Assert.assertNotNull(GET_Method_Helper.getCertificates());
-        Assert.assertFalse(GET_Method_Helper.getCertificates().getData().getNextLevelCertificates().isEmpty());
+        Assert.assertTrue(GET_Method_Helper.getCertificates().getData().getRemainingCertificates().isEmpty());
+        Assert.assertTrue(GET_Method_Helper.getCertificates().getData().getNextLevelCertificates().isEmpty());
 
     }
 
