@@ -109,10 +109,14 @@ public class GET_Method_Helper extends ConfigManager {
 
         Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK);
         Assert.assertTrue(response.getTimeIn(TimeUnit.MILLISECONDS) <Integer.parseInt(valueForTheGivenKey("APIResponseTime")));
-        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].promo_link"));
-        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].know_more_link"));
-        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].referralClass.Count"));
-        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].offers[0]"));
+        Assert.assertEquals(response.jsonPath().getString("data.feed[0].widget_type"), "class");
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].date"));
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[0].detail"));
+        Assert.assertEquals(response.jsonPath().getString("data.feed[1].widget_type"), "sharingLink");
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[1].promo_link"));
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[1].know_more_link"));
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[1].referralClass.Count"));
+        Assert.assertNotNull(response.jsonPath().getString("data.feed[1].offers[0]"));
 
         StudentFeed studentfeed = response.as(type);
 
@@ -144,9 +148,9 @@ public class GET_Method_Helper extends ConfigManager {
 
         Response response = RestAssured
                 .given().auth()
-                .oauth2(_generateToken())
+                .oauth2(valueForTheGivenKey("Token_DemoUser"))
                 .contentType(ContentType.JSON)
-                .param("userId",ConfigManager.valueForTheGivenKey("studentId"))
+                .param("userId",ConfigManager.valueForTheGivenKey("Demo_studentID"))
                 .get(EndPoints.GET_Quiz)
                 .andReturn();
 
@@ -316,7 +320,7 @@ public class GET_Method_Helper extends ConfigManager {
 
         Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK);
         Assert.assertTrue(response.getTimeIn(TimeUnit.MILLISECONDS) <Integer.parseInt(valueForTheGivenKey("APIResponseTime")));
-        Assert.assertEquals("Global house details",response.jsonPath().getString("message"));
+        Assert.assertEquals(response.jsonPath().getString("message"),"Global house details");
 
         GlobalHouse globalhouse = response.as(type);
 

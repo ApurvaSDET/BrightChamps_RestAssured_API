@@ -337,7 +337,7 @@ public class POST_Method_Helper extends ConfigManager {
 
     public Response PostGlobalHouseRequest() throws InstantiationException, IllegalAccessException {
 
-        //Clering Data of Test User from DB
+        //Clearing Data of Test User from DB
         _getResult(valueForTheGivenKey("DeleteGlobalHouseEntry"), null, null);
 
         //Creating Object for GET_Method_Helper Class to fetch the Available Dates and Slots from getGlobalHouseSlot() method

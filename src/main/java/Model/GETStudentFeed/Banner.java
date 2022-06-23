@@ -19,6 +19,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "description",
         "position",
         "visibility",
+        "dashboard",
+        "least_no_classes",
+        "vertical_id",
+        "champ_level",
+        "app_version",
+        "country_id",
         "start_date",
         "expiry_date",
         "created_at",
@@ -34,13 +40,25 @@ public class Banner {
     @JsonProperty("image_link")
     private String imageLink;
     @JsonProperty("redirection_link")
-    private String redirectionLink;
+    private Object redirectionLink;
     @JsonProperty("description")
     private String description;
     @JsonProperty("position")
     private Integer position;
     @JsonProperty("visibility")
     private String visibility;
+    @JsonProperty("dashboard")
+    private Object dashboard;
+    @JsonProperty("least_no_classes")
+    private Object leastNoClasses;
+    @JsonProperty("vertical_id")
+    private Integer verticalId;
+    @JsonProperty("champ_level")
+    private Object champLevel;
+    @JsonProperty("app_version")
+    private Object appVersion;
+    @JsonProperty("country_id")
+    private Object countryId;
     @JsonProperty("start_date")
     private String startDate;
     @JsonProperty("expiry_date")
@@ -83,12 +101,12 @@ public class Banner {
     }
 
     @JsonProperty("redirection_link")
-    public String getRedirectionLink() {
+    public Object getRedirectionLink() {
         return redirectionLink;
     }
 
     @JsonProperty("redirection_link")
-    public void setRedirectionLink(String redirectionLink) {
+    public void setRedirectionLink(Object redirectionLink) {
         this.redirectionLink = redirectionLink;
     }
 
@@ -120,6 +138,66 @@ public class Banner {
     @JsonProperty("visibility")
     public void setVisibility(String visibility) {
         this.visibility = visibility;
+    }
+
+    @JsonProperty("dashboard")
+    public Object getDashboard() {
+        return dashboard;
+    }
+
+    @JsonProperty("dashboard")
+    public void setDashboard(Object dashboard) {
+        this.dashboard = dashboard;
+    }
+
+    @JsonProperty("least_no_classes")
+    public Object getLeastNoClasses() {
+        return leastNoClasses;
+    }
+
+    @JsonProperty("least_no_classes")
+    public void setLeastNoClasses(Object leastNoClasses) {
+        this.leastNoClasses = leastNoClasses;
+    }
+
+    @JsonProperty("vertical_id")
+    public Integer getVerticalId() {
+        return verticalId;
+    }
+
+    @JsonProperty("vertical_id")
+    public void setVerticalId(Integer verticalId) {
+        this.verticalId = verticalId;
+    }
+
+    @JsonProperty("champ_level")
+    public Object getChampLevel() {
+        return champLevel;
+    }
+
+    @JsonProperty("champ_level")
+    public void setChampLevel(Object champLevel) {
+        this.champLevel = champLevel;
+    }
+
+    @JsonProperty("app_version")
+    public Object getAppVersion() {
+        return appVersion;
+    }
+
+    @JsonProperty("app_version")
+    public void setAppVersion(Object appVersion) {
+        this.appVersion = appVersion;
+    }
+
+    @JsonProperty("country_id")
+    public Object getCountryId() {
+        return countryId;
+    }
+
+    @JsonProperty("country_id")
+    public void setCountryId(Object countryId) {
+        this.countryId = countryId;
     }
 
     @JsonProperty("start_date")
