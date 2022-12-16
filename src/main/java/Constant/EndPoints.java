@@ -40,6 +40,7 @@ public class EndPoints {
     public static final String POST_GlobalHouseRequest = "/global-house";
     public static final String POST_UploadProfilePic = "/upload-file";
     public static final String POST_AddBeans = "/addBeans";
+    public static final String POST_Create_Lead_10x = "/create-new-lead";
 
 
 

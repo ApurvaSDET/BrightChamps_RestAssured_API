@@ -42,7 +42,10 @@ public class POST_Methods extends ConfigManager {
     @Test(groups = {"Regression"})
     public void POST_SendMobileOTP(){
 
-        Assert.assertEquals(POST_Method_Helper.SendMobileOTP().jsonPath().getString("message"),"OTP has been sent to +91 "+valueForTheGivenKey("phoneNumber"));
+        //Assert.assertEquals(POST_Method_Helper.SendMobileOTP().jsonPath().getString("message"),"OTP has been sent to +91 "+PhoneNumber);
+
+        System.out.println(POST_Method_Helper.SendMobileOTP().jsonPath().getString("message"));
+
 
     }
 
@@ -115,5 +118,28 @@ public class POST_Methods extends ConfigManager {
         Assert.assertEquals(POST_Method_Helper.AddBeans().jsonPath().getString("message"),"success");
 
     }
+
+    @Test(groups = {"Regression"})
+    public void POST_Create10xLead() {
+
+        String NewLead = POST_Method_Helper.Create10XLead().jsonPath().getString("data.leadId");
+        System.out.println("Lead generated with id: "+NewLead);
+        Assert.assertNotNull(NewLead);
+
+    }
+
+    @Test(groups = {"Regression"})
+    public void BotTest() {
+
+        while(true) {
+
+            //POST_Create10xLead();
+            POST_SendMobileOTP();
+
+        }
+
+    }
+
+
 
 }

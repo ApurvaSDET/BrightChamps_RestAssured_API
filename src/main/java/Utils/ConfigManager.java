@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.sql.*;
 import java.util.Date;
 import java.util.Properties;
+import java.util.Random;
 
 
 public class ConfigManager {
@@ -17,6 +18,7 @@ public class ConfigManager {
     public static Properties Pro;
     public static String BASE_URL = null;
     public static String BASE_URL_Teachers = null;
+    public static String PhoneNumber = null;
 
 
     public ConfigManager(){
@@ -46,6 +48,21 @@ public class ConfigManager {
         return POST_Method_Helper.EmailSignIn().jsonPath().getString("token");
 
     }
+
+    public static String _randomPhoneNumbers()
+    {
+
+        Random rand = new Random();
+
+        String A = String.valueOf(rand.nextInt(99) + 900);
+        String B = String.valueOf(rand.nextInt(899) + 100);
+        String C = String.valueOf(rand.nextInt(999) + 1000);
+
+        return PhoneNumber = A+B+C;
+
+    }
+
+
 
     public String getNextDay()
     {

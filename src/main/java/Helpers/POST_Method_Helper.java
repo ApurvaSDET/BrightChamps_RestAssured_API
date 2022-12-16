@@ -127,7 +127,8 @@ public class POST_Method_Helper extends ConfigManager {
         SendOTP sendOTP = new SendOTP();
 
         //Providing Body
-        sendOTP.setPhoneNumber("+91 "+valueForTheGivenKey("phoneNumber"));
+        //sendOTP.setPhoneNumber("+91 "+PhoneNumber);
+        sendOTP.setPhoneNumber("+918130865152");
         sendOTP.setDialCode("+91");
         sendOTP.setIsPhoneNumber(true);
 
@@ -146,6 +147,39 @@ public class POST_Method_Helper extends ConfigManager {
         return response;
 
     }
+
+    public Response Create10XLead()
+    {
+
+        PhoneNumber = ConfigManager._randomPhoneNumbers();
+
+        System.out.println("Entered PhoneNumber is: "+PhoneNumber);
+
+        //Creating Object for Setter Class
+        Create10xLead lead = new Create10xLead();
+
+        //Providing Body
+        lead.setCountryId(1);
+        lead.setSource("EDUCATION10X_STUDENT_APP");
+        lead.setPhoneNumber(PhoneNumber);
+        lead.setWhatsappConsent("false");
+
+        Response response = RestAssured
+                .given()
+                .contentType(ContentType.JSON)
+                .when()
+                .body(lead)
+                .post(EndPoints.POST_Create_Lead_10x)
+                .andReturn();
+
+
+        Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK);
+        Assert.assertTrue(response.getTimeIn(TimeUnit.MILLISECONDS) < Integer.parseInt(valueForTheGivenKey("APIResponseTime")));
+
+        return response;
+
+    }
+
 
     public Response ForgotPassword()
     {
